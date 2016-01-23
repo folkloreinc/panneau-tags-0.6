@@ -13,7 +13,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "bootstrap-tokenfield": "^0.12.0"
+    "bootstrap-tokenfield": "^0.12.0",
+    "typeahead.js": "^0.11.1"
   },
   "devDependencies": {
     "babel-core": "^5.8.22",

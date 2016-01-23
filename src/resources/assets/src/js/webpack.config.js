@@ -19,6 +19,7 @@ module.exports = function(config)
                     './index'
                 ],
                 'vendors': [
+                    'typeahead.js',
                     'bootstrap-tokenfield'
                 ]
             },
