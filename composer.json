@@ -1,0 +1,26 @@
+{
+	"name": "panneau/tags",
+    "description": "A tags management addon for Panneau",
+    "keywords": ["panneau", "cms", "dashboard", "tags", "fields"],
+    "license": "MIT",
+    "type": "project",
+    "require": {
+        "php": ">=5.5.9",
+        "illuminate/support": "5.2.*",
+		"panneau/panneau": "0.4.*",
+		"rtconner/laravel-tagging": "~2.0"
+    },
+    "require-dev": {
+        "orchestra/testbench": "~3.2"
+    },
+    "autoload": {
+        "psr-0": {
+            "Panneau\\Tags\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "classmap": [
+            "tests/TestCase.php"
+        ]
+    }
+}
