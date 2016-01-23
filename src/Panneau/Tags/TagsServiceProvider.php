@@ -41,7 +41,7 @@ class TagsServiceProvider extends ServiceProvider
         
         $this->loadTranslationsFrom($translationsPath, 'panneau-tags');
         
-        $this->mergeConfigFrom($configPath, 'panneau.tags');
+        $this->mergeConfigFrom($configPath.'/tags.php', 'panneau.tags');
         
         $this->publishes([
             $assetsPath => public_path('vendor/panneau-tags')
