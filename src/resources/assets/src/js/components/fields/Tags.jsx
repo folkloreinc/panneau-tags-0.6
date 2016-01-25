@@ -85,10 +85,9 @@ var TagsField = React.createClass({
         {
             tags.push({
                 label: response[i].name,
-                value: response[i].id
+                value: response[i].name
             });
         }
-        console.log(tags);
         return tags;
     },
     
