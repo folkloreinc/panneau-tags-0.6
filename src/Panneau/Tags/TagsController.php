@@ -4,13 +4,13 @@ use Panneau\Http\Controllers\ResourceController;
 
 class TagsController extends ResourceController
 {
-    protected $resource = 'pages';
+    protected $resource = 'tags';
     protected $forms = array(
-        'create' => 'page',
-        'edit' => 'page'
+        'create' => 'tag',
+        'edit' => 'tag'
     );
     protected $itemsLists = array(
-        'index' => 'pages'
+        'index' => 'tags'
     );
     
     protected function getItem($id)
@@ -18,7 +18,6 @@ class TagsController extends ResourceController
         try
         {
             $item = $this->resource->find($id);
-            $item->load('parent');
             return $item;
         }
         catch(ResourceNotFoundException $e)

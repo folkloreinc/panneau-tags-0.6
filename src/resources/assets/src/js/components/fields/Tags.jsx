@@ -50,7 +50,7 @@ var TagsField = React.createClass({
         this.bloodhound = new Bloodhound({
             prefetch: Panneau.config('tags.url') || '/panneau/tags',
             remote: {
-                url: Panneau.config('tags.url') || '/panneau/tags?q=%QUERY',
+                url: Panneau.config('tags.url') || '/panneau/tags?search=%QUERY',
                 wildcard: '%QUERY'
             },
             datumTokenizer: function(d) {
