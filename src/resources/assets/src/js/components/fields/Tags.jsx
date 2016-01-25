@@ -48,10 +48,14 @@ var TagsField = React.createClass({
         var input = ReactDOM.findDOMNode(this.refs.input);
         
         this.bloodhound = new Bloodhound({
-            prefetch: Panneau.config('tags.url') || '/panneau/tags',
+            prefetch: {
+                url: Panneau.config('tags.url') || '/panneau/tags',
+                transform: this.transformResponse
+            },
             remote: {
                 url: Panneau.config('tags.url') || '/panneau/tags?search=%QUERY',
-                wildcard: '%QUERY'
+                wildcard: '%QUERY',
+                transform: this.transformResponse
             },
             datumTokenizer: function(d) {
                 return Bloodhound.tokenizers.whitespace(d.value);
@@ -65,13 +69,27 @@ var TagsField = React.createClass({
             typeahead: [null, {
                 source: this.bloodhound.ttAdapter(),
                 templates: {
-                    suggestion: _.template('<div><%= value %></div>')
+                    suggestion: _.template('<div><%= label %></div>')
                 }
             }]
         });
         
         _.bindAll(this, 'onChange')
         $(input).on('change', this.onChange);
+    },
+    
+    transformResponse: function(response)
+    {
+        var tags = [];
+        for(var i = 0, tl = response.length; i < tl; i++)
+        {
+            tags.push({
+                label: response[i].name,
+                value: response[i].id
+            });
+        }
+        console.log(tags);
+        return tags;
     },
     
     componentWillUnmount: function()
