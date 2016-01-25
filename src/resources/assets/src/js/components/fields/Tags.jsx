@@ -48,7 +48,10 @@ var TagsField = React.createClass({
         var input = ReactDOM.findDOMNode(this.refs.input);
         
         this.bloodhound = new Bloodhound({
-            local: [{value: 'red'}, {value: 'blue'}, {value: 'green'} , {value: 'yellow'}, {value: 'violet'}, {value: 'brown'}, {value: 'purple'}, {value: 'black'}, {value: 'white'}],
+            remote: {
+                url: Panneau.config('tags.url') || '/panneau/tags?q=%QUERY',
+                wildcard: '%QUERY'
+            }
             datumTokenizer: function(d) {
                 return Bloodhound.tokenizers.whitespace(d.value);
             },
