@@ -1,2 +1,11 @@
-@import 'vendor/tokenfield';
 @import 'vendor/typeahead';
+@import 'vendor/tokenfield';
+
+
+.form-group-tags {
+    
+    .form-control {
+        margin:0;
+        padding:0;
+    }
+}
