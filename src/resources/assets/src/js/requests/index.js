@@ -1,6 +1,6 @@
+var $ = require('jquery');
 var Promise = Promise || require('promise');
 var agent = require('superagent-promise')(require('superagent'), Promise);
-var $ = require('jquery');
 
 module.exports = {
     
