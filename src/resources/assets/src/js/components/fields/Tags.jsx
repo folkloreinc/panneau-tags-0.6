@@ -63,7 +63,7 @@ var TagsField = React.createClass({
                 { label }
                 <input type="hidden" name={this.props.name} value={value} />
                 <input type="text" className="form-control" defaultValue={value} ref="input" placeholder={this.props.placeholder} />
-                { helpText }
+                { helpBlock }
             </div>
         );
     },
