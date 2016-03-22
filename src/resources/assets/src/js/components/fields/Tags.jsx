@@ -31,7 +31,7 @@ var TagsField = React.createClass({
     getDefaultProps: function()
     {
         return {
-            placeholder: '',
+            placeholder: 'Entrez des tags...',
             urlPrefetch: null,
             url: null,
             queryWildcard: '%QUERY',
@@ -82,7 +82,8 @@ var TagsField = React.createClass({
                 wildcard: this.props.queryWildcard,
                 transform: this.transformResponse
             },
-            datumTokenizer: function(d) {
+            datumTokenizer: function(d)
+            {
                 return Bloodhound.tokenizers.whitespace(d.value);
             },
             queryTokenizer: Bloodhound.tokenizers.whitespace
