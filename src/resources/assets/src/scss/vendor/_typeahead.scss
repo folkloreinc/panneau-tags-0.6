@@ -9,6 +9,11 @@
   position: relative;
   vertical-align: top;
 }
+
+.twitter-typeahead .empty-message {
+  text-align:center;
+}
+
 .twitter-typeahead .tt-input,
 .twitter-typeahead .tt-hint {
   margin: 0;
