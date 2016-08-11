@@ -23,6 +23,8 @@ git checkout develop
 git merge $RELEASE_BRANCH
 git push origin develop
 
+git branch -d $RELEASE_BRANCH
+
 git checkout master
 git tag $VERSION
 git push origin master --tags
